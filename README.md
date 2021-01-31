@@ -24,7 +24,7 @@ each hour the time is checked and passed to mqtt which the Victron GX device che
 
 things you need to setup for this to work:
 
-On the linux VM with nide red and SQLite installed:
+On the linux VM with node red and SQLite installed:
 Create the database file and enter SQLite command prompt using:
 
 sqlite3 agile_rates.sqlite
