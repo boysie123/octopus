@@ -53,7 +53,8 @@ double click the Agile time node and adjust to your DB location to yours and cli
 
 double click the Agile rates node and adjust to your DB location to yours and click done
 
-replace your-VRMPortalID-here with your VRM portal ID in the node mqtt start (you can get this from VRM https://vrm.victronenergy.com/ device list/gateway VRM portal ID)
+Vouble click the mqtt start node and edit the server and replace with your GX device IP and click update (rename if needed)
+replace your-VRMPortalID-here with your VRM portal ID in the node mqtt start (you can get this from VRM https://vrm.victronenergy.com/ device list/gateway VRM portal ID) and click done
 
 Click deploy
 
@@ -62,7 +63,7 @@ the fist slot needs to be the following settings:
 Schedule 1:
 Enabled Everyday
 start time (any it will be updated by node red)
-Duration (the same as your requitred time to chage your batteries)
+Duration (the same as your requitred time to charge your batteries)
 Stop on SOC (up to you)
 
 Schedule 2: (this is the time you dont want to discharge)
