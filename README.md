@@ -37,7 +37,7 @@ update starttime set cost= 1 where start_time = 0;
 
 press ctrl + d (to exit SQLite CLI)
 
-install Octopus node red node using 
+install Octopus node red node using: 
 npm install https://github.com/borpin/node-red-contrib-octopus
 
 make sure node red and sqlite are running and start automatically
