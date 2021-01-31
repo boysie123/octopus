@@ -1,4 +1,4 @@
-# octopus
+# octopus setup
 
 To set this up you need a vm or linux server running the follwoing
 Node Red
@@ -29,10 +29,10 @@ Create the database file and enter SQLite command prompt using:
 
 sqlite3 agile_rates.sqlite
 
-create the table:
+create the table using:
 create table starttime(start_time unsigned integer primary key, cost unsigned smallint);
 
-seed the first entry which will be updated:
+seed the first entry which will be updated later:
 update starttime set cost= 1 where start_time = 0;
 
 press ctrl + d (to exit SQLite CLI)
@@ -47,13 +47,33 @@ Using the hamburger top right select import
 
 paste the contents of the flow.txt and click Import
 
-double click the Octopus node and select your region and adjust the periord length accordingly (its in 1.2 hour blocks so set what you need to charge your batteries) and click done
+double click the Octopus node and select your region and adjust the periord length accordingly (its in 1/2 hour blocks so set what you need to charge your batteries) and click done
 
 double click the Agile time node and adjust to your DB location to yours and click done
 
 double click the Agile rates node and adjust to your DB location to yours and click done
 
-replace your-VRMPortalID-here with your VRM portal ID in the node mqtt start (you can get this from VRM https://vrm.victronenergy.com/ gateway VRM portal ID)
+replace your-VRMPortalID-here with your VRM portal ID in the node mqtt start (you can get this from VRM https://vrm.victronenergy.com/ device list/gateway VRM portal ID)
+
+Click deploy
+
+On the GX remote console set a sechdule 
+the fist slot needs to be the following settings:
+Schedule 1:
+Enabled Everyday
+start time (any it will be updated by node red)
+Duration (the same as your requitred time to chage your batteries)
+Stop on SOC (up to you)
+
+Schedule 2: (this is the time you dont want to discharge)
+Enabled Everyday
+start time (for me this is 8pm)
+Duration (21h to take it to 4pm the next day)
+Stop on SOC enabled
+SOC 5% (or below your min SOC)
+
+
+
 
 
 
